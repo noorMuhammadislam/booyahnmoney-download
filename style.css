@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #0d0f12;
+    --card-bg: #181a20;
+    --accent-red: #ff3b30;
+    --accent-yellow: #ffcc00;
+    --text-main: #ffffff;
+    --text-muted: #9a9ea7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-bottom: 1px solid #2a2d36;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-badge {
+    background: var(--accent-red);
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    width: 100%;
+}
+
+.app-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #2a2d36;
+    text-align: center;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.app-logo {
+    width: 70px;
+    height: 70px;
+    background: var(--accent-red);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+}
+
+.app-details h1 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.category {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.tags {
+    display: flex;
+    gap: 6px;
+}
+
+.tag {
+    background: #252830;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--text-muted);
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ffcc00, #ff9500);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 14px;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+}
+
+.safe-text {
+    font-size: 0.8rem;
+    color: #34c759;
+    margin-top: 10px;
+}
+
+.section-box {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #2a2d36;
+}
+
+.section-box h2 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--accent-yellow);
+}
+
+.section-box p {
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.install-steps {
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid #2a2d36css:rootroot
