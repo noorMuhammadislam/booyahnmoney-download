@@ -1,10 +1,10 @@
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BooyahNmoney - Download</title>
+<title>Booyah&Money - Download</title>
 
 <style>
 *{
@@ -19,35 +19,35 @@ html{
 
 body{
   background:#000;
-  color:#f5f5f5;
+  color:#fff;
   font-family:Arial,Helvetica,sans-serif;
   min-height:100vh;
   overflow-x:hidden;
 }
 
-/* Subtle background glow */
-body::before{
+/* Background glow */
+body:before{
   content:"";
   position:fixed;
-  width:320px;
-  height:320px;
+  width:330px;
+  height:330px;
   top:-120px;
   left:-120px;
-  background:rgba(30,255,120,.08);
-  filter:blur(100px);
+  background:rgba(70,220,130,.09);
+  filter:blur(110px);
   border-radius:50%;
   pointer-events:none;
 }
 
-body::after{
+body:after{
   content:"";
   position:fixed;
   width:300px;
   height:300px;
   right:-120px;
   bottom:-100px;
-  background:rgba(30,255,120,.06);
-  filter:blur(100px);
+  background:rgba(50,170,255,.06);
+  filter:blur(110px);
   border-radius:50%;
   pointer-events:none;
 }
@@ -55,23 +55,30 @@ body::after{
 
 /* HEADER */
 .header{
-  padding:24px 20px;
-  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:24px 18px;
   text-align:center;
+
   background:rgba(0,0,0,.55);
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
+
+  border-bottom:1px solid rgba(255,255,255,.10);
+
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+
   position:sticky;
   top:0;
   z-index:10;
 }
 
 .header-logo{
-  color:#39e878;
   font-size:25px;
   font-weight:900;
   letter-spacing:1px;
-  text-shadow:0 0 18px rgba(57,232,120,.25);
+
+  color:#fff;
+
+  text-shadow:
+    0 0 15px rgba(255,255,255,.15);
 }
 
 
@@ -83,37 +90,49 @@ body::after{
 }
 
 
-/* FROSTED GLASS CARD */
+/* GLASS CARD */
 .card{
-  background:rgba(255,255,255,.055);
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:25px;
+
+  /* প্রায় 50% transparent */
+  background:rgba(255,255,255,.075);
+
+  border:1px solid rgba(255,255,255,.16);
+
+  border-radius:26px;
+
   padding:28px 22px;
+
   margin-bottom:26px;
 
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
+  /* Frosted glass */
+  backdrop-filter:blur(28px);
+  -webkit-backdrop-filter:blur(28px);
 
   box-shadow:
-    0 12px 45px rgba(0,0,0,.55),
-    inset 0 1px 0 rgba(255,255,255,.07);
+    0 15px 55px rgba(0,0,0,.65),
+    inset 0 1px 1px rgba(255,255,255,.10);
 
   position:relative;
   overflow:hidden;
 }
 
-/* Glass highlight */
-.card::before{
+
+/* Glass shine */
+.card:before{
   content:"";
+
   position:absolute;
+
   top:0;
   left:0;
+
   width:100%;
   height:1px;
+
   background:linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,.25),
+    rgba(255,255,255,.35),
     transparent
   );
 }
@@ -127,41 +146,39 @@ body::after{
 }
 
 
-/* PREMIUM B$ LOGO */
+/* B$ LOGO */
 .logo{
+
   width:95px;
   height:95px;
+
   min-width:95px;
 
-  border-radius:26px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(57,232,120,.12),
-      rgba(255,255,255,.025)
-    );
-
-  border:1px solid rgba(57,232,120,.45);
+  border-radius:27px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  color:#39e878;
+  color:#42ed83;
+
   font-size:36px;
   font-weight:900;
 
+  background:rgba(0,0,0,.35);
+
+  border:1px solid rgba(66,237,131,.45);
+
   box-shadow:
-    0 0 25px rgba(57,232,120,.16),
-    inset 0 0 25px rgba(57,232,120,.04);
+    0 0 30px rgba(66,237,131,.15),
+    inset 0 0 25px rgba(66,237,131,.05);
 
   text-shadow:
-    0 0 18px rgba(57,232,120,.5);
+    0 0 18px rgba(66,237,131,.55);
 }
 
 
-/* APP NAME */
+/* NAME */
 .app-name{
   font-size:28px;
   font-weight:800;
@@ -170,7 +187,7 @@ body::after{
 }
 
 .category{
-  color:#92969f;
+  color:#a5a8ae;
   font-size:15px;
   margin-bottom:13px;
 }
@@ -184,35 +201,44 @@ body::after{
 }
 
 .badge{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.06);
-  color:#cdd0d5;
+
+  background:rgba(255,255,255,.09);
+
+  border:1px solid rgba(255,255,255,.09);
+
+  color:#d5d7dc;
 
   padding:7px 11px;
+
   border-radius:9px;
 
   font-size:12px;
-  backdrop-filter:blur(10px);
+
+  backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
 }
 
 
 /* DOWNLOAD BUTTON */
 .download{
+
   display:block;
   width:100%;
 
   margin-top:28px;
+
   padding:19px;
 
   border-radius:17px;
 
   background:linear-gradient(
     135deg,
-    #0f9d4d,
-    #36d875
+    #079447,
+    #35d875
   );
 
-  color:white;
+  color:#fff;
+
   text-align:center;
   text-decoration:none;
 
@@ -220,20 +246,17 @@ body::after{
   font-weight:800;
 
   box-shadow:
-    0 10px 30px rgba(35,220,110,.18);
+    0 10px 35px rgba(35,220,110,.20);
 
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease,
-    filter .2s ease;
+  transition:.2s ease;
 }
 
 .download:hover{
+
   transform:translateY(-3px);
-  filter:brightness(1.08);
 
   box-shadow:
-    0 14px 38px rgba(35,220,110,.28);
+    0 15px 45px rgba(35,220,110,.30);
 }
 
 .download:active{
@@ -246,41 +269,57 @@ body::after{
 }
 
 
-/* SAFE TEXT */
+/* SAFE */
 .safe{
+
   text-align:center;
-  color:#39e878;
+
+  color:#42ed83;
+
   margin-top:18px;
+
   font-size:13px;
+
   font-weight:700;
-  text-shadow:0 0 12px rgba(57,232,120,.2);
+
+  text-shadow:
+    0 0 12px rgba(66,237,131,.25);
 }
 
 
 /* SECTION TITLE */
 .section-title{
-  color:#39e878;
+
+  color:#fff;
+
   font-size:22px;
+
   margin-bottom:18px;
 
-  text-shadow:
-    0 0 15px rgba(57,232,120,.12);
+  font-weight:800;
 }
 
 
 /* DESCRIPTION */
 .description{
-  color:#bfc3c9;
+
+  color:#c5c8ce;
+
   font-size:16px;
+
   line-height:1.85;
 }
 
 
 /* INSTALL STEPS */
 .steps{
+
   padding-left:22px;
-  color:#c2c6cc;
+
+  color:#c5c8ce;
+
   font-size:16px;
+
   line-height:1.9;
 }
 
@@ -291,13 +330,16 @@ body::after{
 
 /* FOOTER */
 .footer{
+
   text-align:center;
-  color:#62666e;
+
+  color:#676b73;
+
   font-size:12px;
 
   padding:22px;
 
-  border-top:1px solid rgba(255,255,255,.07);
+  border-top:1px solid rgba(255,255,255,.08);
 }
 
 
@@ -319,7 +361,10 @@ body::after{
 
   .card{
     padding:24px 18px;
-    border-radius:23px;
+    border-radius:24px;
+
+    /* Mobile-এও glass বেশি visible */
+    background:rgba(255,255,255,.075);
   }
 
   .app-name{
@@ -349,10 +394,10 @@ body::after{
 
 <body>
 
-<!-- HEADER -->
+
 <header class="header">
   <div class="header-logo">
-    B$ BOOYAH&MONEY
+    Booyah&Money
   </div>
 </header>
 
@@ -360,12 +405,11 @@ body::after{
 <main class="container">
 
 
-  <!-- APP CARD -->
+  <!-- APP DOWNLOAD CARD -->
   <section class="card">
 
     <div class="app-top">
 
-      <!-- B$ LOGO -->
       <div class="logo">
         B$
       </div>
@@ -373,7 +417,7 @@ body::after{
       <div>
 
         <div class="app-name">
-          BooyahNmoney
+          Booyah&Money
         </div>
 
         <div class="category">
@@ -391,7 +435,7 @@ body::after{
     </div>
 
 
-    <!-- DOWNLOAD -->
+    <!-- CHANGE THIS LINK -->
     <a
       class="download"
       href="MEDIAFIRE_LINK_HERE"
@@ -419,10 +463,14 @@ body::after{
     </h2>
 
     <p class="description">
-      Welcome to BooyahNmoney — a gaming tournament
-      platform designed for competitive players.
-      Join tournaments, compete with other players
-      and showcase your skills.
+
+      Welcome to <b>Booyah&Money</b> — a gaming
+      tournament platform for competitive
+      Free Fire players.
+
+      Join tournaments, compete with other
+      players and showcase your skills.
+
     </p>
 
   </section>
@@ -447,13 +495,12 @@ body::after{
       </li>
 
       <li>
-        Open the downloaded APK and follow the
-        Android installation instructions.
+        Open the downloaded APK and complete
+        the Android installation.
       </li>
 
       <li>
-        After installation, open the
-        BooyahNmoney app.
+        Open <b>Booyah&Money</b> after installation.
       </li>
 
     </ol>
@@ -462,7 +509,7 @@ body::after{
 
 
 
-  <!-- APP INFORMATION -->
+  <!-- APP INFO -->
   <section class="card">
 
     <h2 class="section-title">
@@ -470,6 +517,9 @@ body::after{
     </h2>
 
     <p class="description">
+
+      <b>App Name:</b> Booyah&Money
+      <br><br>
 
       <b>Version:</b> 1.0
       <br><br>
@@ -491,9 +541,11 @@ body::after{
 
 
 <footer class="footer">
-  © 2026 BooyahNmoney. All rights reserved.
+
+  © 2026 Booyah&Money. All rights reserved.
+
 </footer>
 
 
 </body>
-      </html>
+           </html>
