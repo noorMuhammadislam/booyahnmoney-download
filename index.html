@@ -1,303 +1,499 @@
-<!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BooyahNmoney - Download</title>
+<title>BooyahNmoney - Download</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      background: #0c0d10;
-      color: #eeeeee;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .header {
-      padding: 24px 20px;
-      border-bottom: 1px solid #292b30;
-      text-align: center;
-    }
+body{
+  background:#000;
+  color:#f5f5f5;
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
 
-    .header-logo {
-      color: #39e878;
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
+/* Subtle background glow */
+body::before{
+  content:"";
+  position:fixed;
+  width:320px;
+  height:320px;
+  top:-120px;
+  left:-120px;
+  background:rgba(30,255,120,.08);
+  filter:blur(100px);
+  border-radius:50%;
+  pointer-events:none;
+}
 
-    .container {
-      width: 92%;
-      max-width: 650px;
-      margin: 28px auto 60px;
-    }
+body::after{
+  content:"";
+  position:fixed;
+  width:300px;
+  height:300px;
+  right:-120px;
+  bottom:-100px;
+  background:rgba(30,255,120,.06);
+  filter:blur(100px);
+  border-radius:50%;
+  pointer-events:none;
+}
 
-    .card {
-      background: #17191e;
-      border: 1px solid #383b42;
-      border-radius: 24px;
-      padding: 28px 22px;
-      margin-bottom: 28px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-    }
 
-    .app-top {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
+/* HEADER */
+.header{
+  padding:24px 20px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
 
-    /* B$ Logo */
-    .logo {
-      width: 95px;
-      height: 95px;
-      min-width: 95px;
-      border-radius: 25px;
-      background: #101216;
-      border: 2px solid #39e878;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #39e878;
-      font-size: 35px;
-      font-weight: 900;
-      box-shadow: 0 0 25px rgba(57,232,120,0.18);
-    }
+.header-logo{
+  color:#39e878;
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-shadow:0 0 18px rgba(57,232,120,.25);
+}
 
-    .app-name {
-      font-size: 27px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
 
-    .category {
-      color: #9da1aa;
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
+/* MAIN */
+.container{
+  width:92%;
+  max-width:650px;
+  margin:30px auto 70px;
+}
 
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
 
-    .badge {
-      background: #24272e;
-      color: #c8cbd1;
-      padding: 7px 11px;
-      border-radius: 8px;
-      font-size: 13px;
-    }
+/* FROSTED GLASS CARD */
+.card{
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:25px;
+  padding:28px 22px;
+  margin-bottom:26px;
 
-    .download {
-      display: block;
-      width: 100%;
-      margin-top: 28px;
-      padding: 19px;
-      border-radius: 17px;
-      background: linear-gradient(135deg, #148c45, #32c968);
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-size: 21px;
-      font-weight: 800;
-      transition: 0.2s;
-    }
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
 
-    .download:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.1);
-    }
+  box-shadow:
+    0 12px 45px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.07);
 
-    .download-icon {
-      font-size: 25px;
-      margin-right: 8px;
-    }
+  position:relative;
+  overflow:hidden;
+}
 
-    .safe {
-      text-align: center;
-      color: #39e878;
-      margin-top: 18px;
-      font-size: 14px;
-      font-weight: 700;
-    }
+/* Glass highlight */
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+  );
+}
 
-    .section-title {
-      color: #39e878;
-      font-size: 23px;
-      margin-bottom: 18px;
-    }
 
-    .description {
-      color: #bfc2c8;
-      font-size: 17px;
-      line-height: 1.8;
-    }
+/* APP TOP */
+.app-top{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
 
-    .steps {
-      padding-left: 22px;
-      color: #c2c5ca;
-      font-size: 17px;
-      line-height: 2;
-    }
 
-    .steps li {
-      margin-bottom: 8px;
-    }
+/* PREMIUM B$ LOGO */
+.logo{
+  width:95px;
+  height:95px;
+  min-width:95px;
 
-    .footer {
-      text-align: center;
-      color: #686c74;
-      font-size: 13px;
-      padding: 20px;
-      border-top: 1px solid #25272c;
-    }
+  border-radius:26px;
 
-    @media (max-width: 450px) {
-      .app-name {
-        font-size: 23px;
-      }
+  background:
+    linear-gradient(
+      145deg,
+      rgba(57,232,120,.12),
+      rgba(255,255,255,.025)
+    );
 
-      .logo {
-        width: 82px;
-        height: 82px;
-        min-width: 82px;
-        font-size: 30px;
-      }
+  border:1px solid rgba(57,232,120,.45);
 
-      .description,
-      .steps {
-        font-size: 16px;
-      }
-    }
-  </style>
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#39e878;
+  font-size:36px;
+  font-weight:900;
+
+  box-shadow:
+    0 0 25px rgba(57,232,120,.16),
+    inset 0 0 25px rgba(57,232,120,.04);
+
+  text-shadow:
+    0 0 18px rgba(57,232,120,.5);
+}
+
+
+/* APP NAME */
+.app-name{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:7px;
+  letter-spacing:-.5px;
+}
+
+.category{
+  color:#92969f;
+  font-size:15px;
+  margin-bottom:13px;
+}
+
+
+/* BADGES */
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.badge{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.06);
+  color:#cdd0d5;
+
+  padding:7px 11px;
+  border-radius:9px;
+
+  font-size:12px;
+  backdrop-filter:blur(10px);
+}
+
+
+/* DOWNLOAD BUTTON */
+.download{
+  display:block;
+  width:100%;
+
+  margin-top:28px;
+  padding:19px;
+
+  border-radius:17px;
+
+  background:linear-gradient(
+    135deg,
+    #0f9d4d,
+    #36d875
+  );
+
+  color:white;
+  text-align:center;
+  text-decoration:none;
+
+  font-size:20px;
+  font-weight:800;
+
+  box-shadow:
+    0 10px 30px rgba(35,220,110,.18);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    filter .2s ease;
+}
+
+.download:hover{
+  transform:translateY(-3px);
+  filter:brightness(1.08);
+
+  box-shadow:
+    0 14px 38px rgba(35,220,110,.28);
+}
+
+.download:active{
+  transform:scale(.98);
+}
+
+.download-icon{
+  font-size:25px;
+  margin-right:8px;
+}
+
+
+/* SAFE TEXT */
+.safe{
+  text-align:center;
+  color:#39e878;
+  margin-top:18px;
+  font-size:13px;
+  font-weight:700;
+  text-shadow:0 0 12px rgba(57,232,120,.2);
+}
+
+
+/* SECTION TITLE */
+.section-title{
+  color:#39e878;
+  font-size:22px;
+  margin-bottom:18px;
+
+  text-shadow:
+    0 0 15px rgba(57,232,120,.12);
+}
+
+
+/* DESCRIPTION */
+.description{
+  color:#bfc3c9;
+  font-size:16px;
+  line-height:1.85;
+}
+
+
+/* INSTALL STEPS */
+.steps{
+  padding-left:22px;
+  color:#c2c6cc;
+  font-size:16px;
+  line-height:1.9;
+}
+
+.steps li{
+  margin-bottom:8px;
+}
+
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  color:#62666e;
+  font-size:12px;
+
+  padding:22px;
+
+  border-top:1px solid rgba(255,255,255,.07);
+}
+
+
+/* MOBILE */
+@media(max-width:450px){
+
+  .header{
+    padding:21px 15px;
+  }
+
+  .header-logo{
+    font-size:22px;
+  }
+
+  .container{
+    width:91%;
+    margin-top:24px;
+  }
+
+  .card{
+    padding:24px 18px;
+    border-radius:23px;
+  }
+
+  .app-name{
+    font-size:23px;
+  }
+
+  .logo{
+    width:82px;
+    height:82px;
+    min-width:82px;
+    font-size:30px;
+    border-radius:23px;
+  }
+
+  .description,
+  .steps{
+    font-size:15px;
+  }
+
+  .download{
+    font-size:19px;
+  }
+}
+</style>
 </head>
+
 
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="header-logo">B$ BOOYAH&MONEY</div>
-  </header>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">
+    B$ BOOYAH&MONEY
+  </div>
+</header>
 
 
-  <main class="container">
+<main class="container">
 
-    <!-- App Download Card -->
-    <section class="card">
 
-      <div class="app-top">
+  <!-- APP CARD -->
+  <section class="card">
 
-        <!-- Logo -->
-        <div class="logo">B$</div>
+    <div class="app-top">
 
-        <div>
-          <div class="app-name">BooyahNmoney</div>
+      <!-- B$ LOGO -->
+      <div class="logo">
+        B$
+      </div>
 
-          <div class="category">
-            Game / Tournament
-          </div>
+      <div>
 
-          <div class="badges">
-            <span class="badge">v1.0</span>
-            <span class="badge">15 MB</span>
-            <span class="badge">Android 5.0+</span>
-          </div>
+        <div class="app-name">
+          BooyahNmoney
+        </div>
+
+        <div class="category">
+          Game / Tournament
+        </div>
+
+        <div class="badges">
+          <span class="badge">v1.0</span>
+          <span class="badge">15 MB</span>
+          <span class="badge">Android 5.0+</span>
         </div>
 
       </div>
 
-
-      <!-- Download Button -->
-      <a
-        class="download"
-        href="MEDIAFIRE_LINK_HERE"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span class="download-icon">⇩</span>
-        Download APK
-      </a>
-
-      <div class="safe">
-        ✓ Official Download
-      </div>
-
-    </section>
+    </div>
 
 
-    <!-- About App -->
-    <section class="card">
-
-      <h2 class="section-title">
-        About the App
-      </h2>
-
-      <p class="description">
-        Welcome to BooyahNmoney — a gaming tournament platform
-        designed for competitive players.
-        Join tournaments, compete with other players and
-        showcase your skills.
-      </p>
-
-    </section>
+    <!-- DOWNLOAD -->
+    <a
+      class="download"
+      href="MEDIAFIRE_LINK_HERE"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="download-icon">⇩</span>
+      Download APK
+    </a>
 
 
-    <!-- Installation Guide -->
-    <section class="card">
+    <div class="safe">
+      ✓ Official Download
+    </div>
 
-      <h2 class="section-title">
-        How to Install?
-      </h2>
-
-      <ol class="steps">
-        <li>Tap the <b>Download APK</b> button above.</li>
-
-        <li>Download the latest APK file.</li>
-
-        <li>
-          Open the downloaded APK and follow the
-          Android installation instructions.
-        </li>
-
-        <li>
-          After installation, open the BooyahNmoney app.
-        </li>
-      </ol>
-
-    </section>
+  </section>
 
 
-    <!-- Version Information -->
-    <section class="card">
 
-      <h2 class="section-title">
-        App Information
-      </h2>
+  <!-- ABOUT -->
+  <section class="card">
 
-      <p class="description">
-        <b>Version:</b> 1.0<br><br>
-        <b>Platform:</b> Android<br><br>
-        <b>Category:</b> Game / Tournament<br><br>
-        <b>Latest Update:</b> August 2026
-      </p>
+    <h2 class="section-title">
+      About the App
+    </h2>
 
-    </section>
+    <p class="description">
+      Welcome to BooyahNmoney — a gaming tournament
+      platform designed for competitive players.
+      Join tournaments, compete with other players
+      and showcase your skills.
+    </p>
 
-  </main>
+  </section>
 
 
-  <footer class="footer">
-    © 2026 BooyahNmoney. All rights reserved.
-  </footer>
+
+  <!-- INSTALL -->
+  <section class="card">
+
+    <h2 class="section-title">
+      How to Install?
+    </h2>
+
+    <ol class="steps">
+
+      <li>
+        Tap the <b>Download APK</b> button above.
+      </li>
+
+      <li>
+        Download the latest APK file.
+      </li>
+
+      <li>
+        Open the downloaded APK and follow the
+        Android installation instructions.
+      </li>
+
+      <li>
+        After installation, open the
+        BooyahNmoney app.
+      </li>
+
+    </ol>
+
+  </section>
+
+
+
+  <!-- APP INFORMATION -->
+  <section class="card">
+
+    <h2 class="section-title">
+      App Information
+    </h2>
+
+    <p class="description">
+
+      <b>Version:</b> 1.0
+      <br><br>
+
+      <b>Platform:</b> Android
+      <br><br>
+
+      <b>Category:</b> Game / Tournament
+      <br><br>
+
+      <b>Latest Update:</b> August 2026
+
+    </p>
+
+  </section>
+
+
+</main>
+
+
+<footer class="footer">
+  © 2026 BooyahNmoney. All rights reserved.
+</footer>
+
 
 </body>
-    </html>
+      </html>
